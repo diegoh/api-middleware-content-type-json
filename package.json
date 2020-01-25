@@ -22,7 +22,7 @@
   "homepage": "https://github.com/diegoh/api-middleware-content-type-json#readme",
   "devDependencies": {
     "@diegoh/eslint-config-node": "^1.0.0",
-    "husky": "^3.1.0",
+    "husky": "^4.2.1",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
     "nyc": "^15.0.0",
