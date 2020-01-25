@@ -1,13 +1,19 @@
-# @diegoh/template-nodejs
+# @diegoh/api-middleware-content-type-json
 
-![](https://github.com/diegoh/template-nodejs/workflows/Test/badge.svg) ![](https://github.com/diegoh/template-nodejs/workflows/Security/badge.svg) ![](https://github.com/diegoh/template-nodejs/workflows/Publish/badge.svg)
+![](https://github.com/diegoh/api-middleware-content-type-json/workflows/Test/badge.svg) ![](https://github.com/diegoh/api-middleware-content-type-json/workflows/Security/badge.svg) ![](https://github.com/diegoh/api-middleware-content-type-json/workflows/Publish/badge.svg)
+
+Sets the content type of the response to `application/json`.
 
 ## Usage
 
 ### Example
 
 ```js
-// Add description
+const setContentTypeJson = require('@diegoh/api-middleware-content-type-json');
+const Koa = require('koa');
+
+const app = new Koa();
+app.use(setContentTypeJson());
 ```
 
 ## Development
