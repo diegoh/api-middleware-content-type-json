@@ -1,11 +1,42 @@
 const assert = require('assert');
-const example = require('./index');
+const td = require('testdouble');
 
 describe('src/index', () => {
-  it('exports an init function', () => {
-    assert.strictEqual(typeof example, 'function');
+  let setupMiddleware;
+  let setContentTypeJson;
+  let ctx;
+
+  beforeEach(() => {
+    ctx = {
+      set: td.function()
+    };
+    setupMiddleware = require('./index');
+    setContentTypeJson = setupMiddleware();
   });
-  it('returns true', () => {
-    assert.strictEqual(example(), true);
+
+  afterEach(() => {
+    td.reset();
+  });
+
+  it('exports a function', () => {
+    assert.strictEqual(typeof setContentTypeJson, 'function');
+  });
+
+  it('returns a function', () => {
+    assert.strictEqual(typeof setupMiddleware(), 'function');
+  });
+
+  it('calls next()', async () => {
+    const next = td.function();
+
+    await setContentTypeJson(ctx, next);
+    td.verify(next());
+  });
+
+  it('sets ctx.type to application/json', async () => {
+    const next = td.function();
+
+    await setContentTypeJson(ctx, next);
+    assert.strictEqual(ctx.type, 'application/json');
   });
 });
