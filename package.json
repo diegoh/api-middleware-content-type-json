@@ -1,6 +1,6 @@
 {
   "name": "@diegoh/api-middleware-content-type-json",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Koa middleware that sets the content type of the response to application/json",
   "prettier": "@diegoh/eslint-config-prettier-typescript-node/src/prettier.js",
   "main": "dist/index.js",
