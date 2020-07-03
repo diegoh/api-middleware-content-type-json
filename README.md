@@ -1,6 +1,6 @@
 # @diegoh/api-middleware-content-type-json
 
-![](https://github.com/diegoh/api-middleware-content-type-json/workflows/Test/badge.svg) ![](https://github.com/diegoh/api-middleware-content-type-json/workflows/Security/badge.svg) ![](https://github.com/diegoh/api-middleware-content-type-json/workflows/Publish/badge.svg)
+![](https://github.com/diegoh/api-middleware-content-type-json/workflows/Build/badge.svg)
 
 Sets the content type of the response to `application/json`.
 
