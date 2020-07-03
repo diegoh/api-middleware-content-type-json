@@ -1,4 +1,4 @@
-name: Build
+name: Coverage
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12, 14]
+        node-version: [14]
 
     steps:
       - uses: actions/checkout@v1
@@ -36,14 +36,12 @@ jobs:
 
       - name: dependencies
         run: npm ci
+
+      - name: Test and Publish Coverage
+        uses: paambaati/codeclimate-action@v2.6.0
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: lint
-        run: npm run lint
-
-      - name: test:unit
-        run: npm run test:unit
-
-      - name: audit
-        run: npm audit --production --registry=https://registry.npmjs.org
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: npm run test:coverage
+          coverageLocations: |
+            ${{github.workspace}}/misc/.coverage/lcov.info:lcov
