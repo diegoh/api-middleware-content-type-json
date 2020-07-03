@@ -1,5 +1,5 @@
-import setupMiddleware from './index';
 import { DefaultContext, Next } from 'koa';
+import setupMiddleware from './index';
 
 describe('src/index', () => {
   let middleware: (ctx: DefaultContext, next: Next) => {};
