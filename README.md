@@ -34,4 +34,4 @@ app.use(setContentTypeJson());
 
 ### Lint
 
-`npm run lint` or `npm run lint-fix` to automatically fix any linting issues.
+`npm run lint` or `npm run lint:fix` to automatically fix any linting issues.
